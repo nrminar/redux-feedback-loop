@@ -3,15 +3,17 @@ import Axios from 'axios';
 import { connect } from 'react-redux';
 class Thanks extends Component {
   deleteItem = () =>{
-      console.log('in delete item')
-      console.log(this.props.item.id)
-      Axios.delete(`/api/feedback/${this.props.item.id}`)
-      .then((response) =>{
-          console.log('DELETE RESPONSE:', response)
-      }).catch((error) =>{
-          console.log('DELETE ERROR:', error)
-      })
-      this.props.getFeedback();
+      if(window.confirm('Are you sure that you want to delete this feedback?')){
+        console.log('in delete item')
+        console.log(this.props.item.id)
+        Axios.delete(`/api/feedback/${this.props.item.id}`)
+        .then((response) =>{
+            console.log('DELETE RESPONSE:', response)
+        }).catch((error) =>{
+            console.log('DELETE ERROR:', error)
+        })
+        this.props.getFeedback();
+      }
   }
   render() {
     return (

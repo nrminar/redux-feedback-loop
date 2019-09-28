@@ -19,13 +19,14 @@ class Home extends Component {
       })
       console.log('All the feedback:', this.state.feedback)
   }
-
-
+  homeButton = () =>{
+    this.props.history.push('/')
+  }
   render() {
     return (
       <div>
         <h1>Admin</h1>
-        <table>
+        <table className = "adminTable">
             <thead>
                 <th>Feeling</th>
                 <th>Understanding</th>
@@ -41,6 +42,12 @@ class Home extends Component {
                 )}
             </tbody>
         </table>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <button onClick = {this.homeButton}>Home</button>
       </div>
     );
   }

@@ -12,7 +12,9 @@
 .App-title {
   font-size: 1.5em;
 }
-
+.adminTable{
+  margin: auto;
+}
 .App-intro {
   font-size: large;
 }
